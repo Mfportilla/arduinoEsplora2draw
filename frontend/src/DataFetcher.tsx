@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 interface DataFetcherProps {
@@ -11,6 +11,9 @@ interface DataFetcherProps {
 }
 
 const DataFetcher: React.FC<DataFetcherProps> = ({ onDataFetched }) => {
+  const [leftPressed, setLeftPressed] = useState(0);
+  const [rightPressed, setRightPressed] = useState(0);
+
   const fetchData = async () => {
     try {
       const response = await axios.get("http://localhost:4000/api/serial-data");
@@ -29,19 +32,39 @@ const DataFetcher: React.FC<DataFetcherProps> = ({ onDataFetched }) => {
     fetchData();
   }, []);
 
-  return (
-    /*
-    <button
-      onClick={fetchData}
-      className="border border-teal-400 text-stone-900 rounded px-4 py-2 bg-teal-400 active:bg-transparent active:text-teal-400 transition duration-300 mt-10"
-    >
-      ✐ Dibujar
-    </button*/
-    <div className="flechitas">
-      <button>Izquierda</button>
-      <button>Derecha</button>
-    </div>
+  const handleLeftMouseDown = () => {
+    setLeftPressed(1);
+    // Aquí puedes agregar la lógica para el sensor data (10)
+  };
 
+  const handleLeftMouseUp = () => {
+    setLeftPressed(0);
+  };
+
+  const handleRightMouseDown = () => {
+    setRightPressed(1);
+    // Aquí puedes agregar la lógica para el sensor data (12)
+  };
+
+  const handleRightMouseUp = () => {
+    setRightPressed(0);
+  };
+
+  return (
+    <div className="flechitas">
+      <button
+        onMouseDown={handleLeftMouseDown}
+        onMouseUp={handleLeftMouseUp}
+      >
+        Izquierda: {leftPressed}
+      </button>
+      <button
+        onMouseDown={handleRightMouseDown}
+        onMouseUp={handleRightMouseUp}
+      >
+        Derecha: {rightPressed}
+      </button>
+    </div>
   );
 };
 
