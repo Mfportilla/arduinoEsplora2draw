@@ -30,12 +30,18 @@ const DataFetcher: React.FC<DataFetcherProps> = ({ onDataFetched }) => {
   }, []);
 
   return (
+    /*
     <button
       onClick={fetchData}
       className="border border-teal-400 text-stone-900 rounded px-4 py-2 bg-teal-400 active:bg-transparent active:text-teal-400 transition duration-300 mt-10"
     >
       ✐ Dibujar
-    </button>
+    </button*/
+    <div className="flechitas">
+      <button>Izquierda</button>
+      <button>Derecha</button>
+    </div>
+
   );
 };
 

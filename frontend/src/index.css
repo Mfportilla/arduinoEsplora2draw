@@ -3,11 +3,25 @@
 @tailwind utilities;
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: antiquewhite;
-  background-color: rgb(24, 24, 24);
+  font-family: "times new roman", Helvetica, 'Times New Roman', Times, serif, sans-serif;
+  line-height: 1.9;
+  color: rgb(242, 239, 213);
+  background-color: rgb(187, 185, 185);
 }
 .h-64 {
-  height: 11rem;
+  height: 17rem;
+}
+
+canvas {
+  border: 1px solid rgb(0, 0, 0);
+  width: 480px;
+  height: 600px;
+  background-color: rgb(191, 213, 228);
+}
+
+.flechitas button {
+  border: 2px solid rgb(0, 0, 0);
+  margin: 35px;
+  padding: 20px;
+  background-color: rgb(83, 83, 85);
 }

@@ -45,7 +45,7 @@ const CanvasComponent: React.FC<CanvasComponentProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className="border border-gray-300 w-full h-64"
+      className=""
     ></canvas>
   );
 };
